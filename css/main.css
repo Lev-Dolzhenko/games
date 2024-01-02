@@ -112,6 +112,10 @@ a {
   display: none !important;
 }
 
+.button {
+  border: 1px solid black;
+}
+
 .nav-icon-btn {
   --time: 0.1s;
   --width: 40px;

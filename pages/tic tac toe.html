@@ -90,10 +90,17 @@
 
             const winnerSymbol = winnerSequence ? cells[winnerSequence[0]] : undefined;
 
+            const clearField = () => {
+                setCells(Array(9).fill(null));
+                setCurrentStep(symbol__O);
+                setWinnerSequence(null);
+            }
+
             return (
                 <div className="game">
                     <div className="game__info">
-                        {winnerSequence ? "Победитель: " : "Ход: "} {renderSymbol(winnerSymbol ?? currentStep)}
+                        {!winnerSequence && !cells.includes(null) ? "Ничья" : winnerSequence ? "Победитель: " : "Ход: "} {renderSymbol(winnerSymbol ?? currentStep)}
+                        <button className="button" onClick={clearField}>clear</button>
                     </div>
                     <div className="game__field">
                         {
@@ -111,8 +118,15 @@
             )
         }
 
+        // function clearButton() {
+        //     return (
+        //         <button>clear</button>
+        //     );
+        // }
+
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
+        // root.render(<clearButton />);
 
     </script>
 </body>
