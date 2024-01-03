@@ -299,4 +299,11 @@ a {
   color: green;
 }
 
+.clearBtn {
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
 /* TIC TAC TOE */
